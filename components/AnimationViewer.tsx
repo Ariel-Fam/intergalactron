@@ -15,9 +15,11 @@ import { Play, Pause, SkipBack, SkipForward } from "lucide-react";
 
 // This is a the model component for loading your GLB
 
+type AnimationActions = Record<string, THREE.AnimationAction | null>;
+
 type ModelProps = { 
   url: string; 
-  onAnimationsLoaded: (count: number, actions: any, names: string[]) => void;
+  onAnimationsLoaded: (count: number, actions: AnimationActions, names: string[]) => void;
   modelRef: React.RefObject<THREE.Group | null>;
 }
 
@@ -87,11 +89,11 @@ export default function AnimationViewer() {
   const [animationCount, setAnimationCount] = useState(0);
   const [currentAnimationIndex, setCurrentAnimationIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [animationActions, setAnimationActions] = useState<any>(null);
+  const [animationActions, setAnimationActions] = useState<AnimationActions | null>(null);
   const [animationNames, setAnimationNames] = useState< string[]>([]);
   const modelRef = useRef<THREE.Group>(null);
 
-  const handleAnimationsLoaded = (count: number, actions: any, names: string[]) => {
+  const handleAnimationsLoaded = (count: number, actions: AnimationActions, names: string[]) => {
     console.log("Setting animations:", count, names);
     setAnimationCount(count);
     setAnimationActions(actions);
@@ -107,7 +109,7 @@ export default function AnimationViewer() {
     console.log("Playing animation:", animationNames[index]);
 
     // Stop all animations
-    Object.values(animationActions).forEach((action: any) => {
+    Object.values(animationActions).forEach((action: THREE.AnimationAction | null) => {
       action?.stop();
     });
 
