@@ -44,7 +44,7 @@ export const process =  [
         color: "from-blue-500 to-cyan-600"
     },
     {
-        date: "Deloy",
+        date: "Deploy",
         title: "Step 5:",
         description: "Share the Multi-Modal art project.",
         
