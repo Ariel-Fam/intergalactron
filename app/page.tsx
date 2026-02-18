@@ -38,7 +38,7 @@ export default function Home() {
               alt="img"
               />
 
-              <Card className="w-[50vw] p-7 flex flex-col ml-7 text-white bg-orange-600 border-0">
+              <Card className="w-[70vw] p-7 flex flex-col ml-7 text-white bg-orange-600 border-0">
 
             
                 <CardContent className="">
