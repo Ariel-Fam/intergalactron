@@ -343,7 +343,7 @@ export default function Home() {
           <Card className={`${saira.className}
           p-7 flex flex-col items-center w-[70vw] `}>
 
-            <CardTitle className="text-3xl">Why Multi-Modal art Projects are important:</CardTitle>
+            <CardTitle className="text-3xl text-center">Why Multi-Modal art Projects are important:</CardTitle>
 
             <CardContent className="text-center">
 
